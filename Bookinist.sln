@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookinist", "Bookinist\Bookinist.csproj", "{350100BA-D966-43BE-92FB-14E05E944FE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookinist.DAL", "Bookinist.DAL\Bookinist.DAL.csproj", "{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{350100BA-D966-43BE-92FB-14E05E944FE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{350100BA-D966-43BE-92FB-14E05E944FE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{350100BA-D966-43BE-92FB-14E05E944FE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
