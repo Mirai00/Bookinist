@@ -29,9 +29,6 @@ namespace Bookinist.DAL.Migrations
                     b.Property<int?>("CategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("DealId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -39,8 +36,6 @@ namespace Bookinist.DAL.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
-
-                    b.HasIndex("DealId");
 
                     b.ToTable("Books");
                 });
@@ -90,6 +85,9 @@ namespace Bookinist.DAL.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("BookId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("BuyerId")
                         .HasColumnType("int");
 
@@ -100,6 +98,8 @@ namespace Bookinist.DAL.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("BookId");
 
                     b.HasIndex("BuyerId");
 
@@ -136,15 +136,15 @@ namespace Bookinist.DAL.Migrations
                         .WithMany("Books")
                         .HasForeignKey("CategoryId");
 
-                    b.HasOne("Bookinist.DAL.Entities.Deal", null)
-                        .WithMany("Book")
-                        .HasForeignKey("DealId");
-
                     b.Navigation("Category");
                 });
 
             modelBuilder.Entity("Bookinist.DAL.Entities.Deal", b =>
                 {
+                    b.HasOne("Bookinist.DAL.Entities.Book", "Book")
+                        .WithMany()
+                        .HasForeignKey("BookId");
+
                     b.HasOne("Bookinist.DAL.Entities.Buyer", "Buyer")
                         .WithMany()
                         .HasForeignKey("BuyerId");
@@ -152,6 +152,8 @@ namespace Bookinist.DAL.Migrations
                     b.HasOne("Bookinist.DAL.Entities.Seller", "Seller")
                         .WithMany()
                         .HasForeignKey("SellerId");
+
+                    b.Navigation("Book");
 
                     b.Navigation("Buyer");
 
@@ -161,11 +163,6 @@ namespace Bookinist.DAL.Migrations
             modelBuilder.Entity("Bookinist.DAL.Entities.Category", b =>
                 {
                     b.Navigation("Books");
-                });
-
-            modelBuilder.Entity("Bookinist.DAL.Entities.Deal", b =>
-                {
-                    b.Navigation("Book");
                 });
 #pragma warning restore 612, 618
         }

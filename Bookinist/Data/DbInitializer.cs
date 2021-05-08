@@ -133,6 +133,7 @@ namespace Bookinist.Data
                     Price = (decimal)(rnd.NextDouble() * 4000 + 700)
                 });
             await _db.Deals.AddRangeAsync(deals);
+            await _db.SaveChangesAsync();
             _logger.LogInformation("Инициализация Сделок выполнено за {0} с", timer.Elapsed.TotalSeconds);
         }
     }
