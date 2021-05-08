@@ -9,12 +9,15 @@
         Title="{Binding Title}" Height="450" Width="800">
     <DockPanel>
         <Menu IsMainMenu="True">
-            <MenuItem Header="Покупатели"></MenuItem>
-            <MenuItem Header="Книги"></MenuItem>
-            <MenuItem Header="Статистика"></MenuItem>
+            <MenuItem Header="Покупатели" Command="{Binding ShowBuyersViewCommand}"></MenuItem>
+            <MenuItem Header="Книги" Command="{Binding ShowBooksViewCommand}"></MenuItem>
+            <MenuItem Header="Статистика" Command="{Binding ShowStatisticsViewCommand}"></MenuItem>
         </Menu>
         <StatusBar>
             <StatusBarItem>Готово</StatusBarItem>
         </StatusBar>
+        <Grid>
+            <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+        </Grid>
     </DockPanel>
 </Window>
