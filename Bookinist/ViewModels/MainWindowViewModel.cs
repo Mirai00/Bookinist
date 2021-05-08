@@ -17,6 +17,7 @@ namespace Bookinist.ViewModels
         private readonly IRepository<Book> _booksRepository;
         private readonly IRepository<Seller> _sellersRepository;
         private readonly IRepository<Buyer> _buyersRepository;
+        private readonly IRepository<Deal> _dealsRepository;
         private readonly ISalesService _salesService;
 
         #region Title : string - Заголовок
@@ -102,7 +103,8 @@ namespace Bookinist.ViewModels
         /// <summary>Логика выполнения - Отобразить представление статистики</summary>
         private void OnShowStatisticsViewCommandExecuted()
         {
-            CurrentViewModel = new StatisticsViewModel(_booksRepository, _sellersRepository, _buyersRepository);
+            CurrentViewModel = new StatisticsViewModel(_booksRepository, _sellersRepository, _buyersRepository,
+                _dealsRepository);
         }
 
         #endregion
@@ -111,11 +113,13 @@ namespace Bookinist.ViewModels
             IRepository<Book> BooksRepository,
             IRepository<Seller> sellersRepository,
             IRepository<Buyer> buyersRepository,
+            IRepository<Deal> DealsRepository,
             ISalesService SalesService)
         {
             _booksRepository = BooksRepository;
             _sellersRepository = sellersRepository;
             _buyersRepository = buyersRepository;
+            _dealsRepository = DealsRepository;
             _salesService = SalesService;
 
             //Test();
