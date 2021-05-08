@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookinist", "Bookinist\Bookinist.csproj", "{350100BA-D966-43BE-92FB-14E05E944FE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookinist", "Bookinist\Bookinist.csproj", "{350100BA-D966-43BE-92FB-14E05E944FE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookinist.DAL", "Bookinist.DAL\Bookinist.DAL.csproj", "{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bookinist.DAL", "Bookinist.DAL\Bookinist.DAL.csproj", "{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bookinist.Interfaces", "Bookinist.Interfaces\Bookinist.Interfaces.csproj", "{C065AD96-908F-4465-BF5E-A25ACBD3F3ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD0862FE-96EC-416C-B3F4-2D2473D3A78E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C065AD96-908F-4465-BF5E-A25ACBD3F3ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C065AD96-908F-4465-BF5E-A25ACBD3F3ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C065AD96-908F-4465-BF5E-A25ACBD3F3ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C065AD96-908F-4465-BF5E-A25ACBD3F3ED}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
