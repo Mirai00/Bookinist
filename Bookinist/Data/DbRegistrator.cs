@@ -30,7 +30,7 @@ namespace Bookinist.Data
                 }
             })
             .AddTransient<DbInitializer>()
-            .AddRepositoriesInDB()
+            .AddRepositoriesInDb()
         ;
     }
 }
