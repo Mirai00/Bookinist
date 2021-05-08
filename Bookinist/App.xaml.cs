@@ -2,6 +2,8 @@
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Windows;
+using Bookinist.Services;
+using Bookinist.ViewModels;
 
 namespace Bookinist
 {
@@ -10,16 +12,16 @@ namespace Bookinist
     /// </summary>
     public partial class App : Application
     {
-        private static IHost _Host;
+        private static IHost __Host;
 
-        public static IHost Host => _Host
+        public static IHost Host => __Host
             ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
         public static IServiceProvider Services => Host.Services;
-        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
-            throw new NotImplementedException();
-        }
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddServices()
+            .AddViewModels()
+        ;
 
         protected override async void OnStartup(StartupEventArgs e)
         {
