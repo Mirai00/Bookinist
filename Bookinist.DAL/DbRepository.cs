@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Bookinist.DAL
 {
-    class DbRepository<T> : IRepository<T> where T : EntityBase, IEntity, new()
+    internal class DbRepository<T> : IRepository<T> where T : EntityBase, IEntity, new()
     {
         private readonly BookinistDB _db;
         private readonly DbSet<T> _set;
@@ -82,6 +82,28 @@ namespace Bookinist.DAL
             _db.Remove(new T { Id = id });
             if (AutoSaveChanges)
                 await _db.SaveChangesAsync(cancel).ConfigureAwait(false);
+        }
+    }
+    class BooksRepository : DbRepository<Book>
+    {
+        public override IQueryable<Book> Items => base.Items.Include(Items => Items.Category);
+
+        public BooksRepository(BookinistDB db) : base(db)
+        {
+
+        }
+    }
+    class DealsRepository : DbRepository<Deal>
+    {
+        public override IQueryable<Deal> Items => base.Items
+            .Include(Items => Items.Book)
+            .Include(Items => Items.Seller)
+            .Include(Items => Items.Buyer)
+        ;
+
+        public DealsRepository(BookinistDB db) : base(db)
+        {
+
         }
     }
 }

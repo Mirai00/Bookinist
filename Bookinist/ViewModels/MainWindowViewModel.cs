@@ -4,11 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Bookinist.DAL.Entities;
+using Bookinist.Interfaces;
 
 namespace Bookinist.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
+        private readonly IRepository<Book> _booksRepository;
         #region Title : string - Заголовок
 
         /// <summary>Заголовок</summary>
@@ -22,5 +25,11 @@ namespace Bookinist.ViewModels
         }
 
         #endregion
+
+        public MainWindowViewModel(IRepository<Book> BooksRepository)
+        {
+            _booksRepository = BooksRepository;
+            var books = BooksRepository.Items.Take(10).ToArray();
+        }
     }
 }
