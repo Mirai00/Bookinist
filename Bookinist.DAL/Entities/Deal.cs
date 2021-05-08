@@ -7,7 +7,7 @@ namespace Bookinist.DAL.Entities
     {
         [Column(TypeName = "decimal(18,2)")]
         public decimal Price { get; set; }
-        public virtual ICollection<Book> Book { get; set; }
+        public virtual Book Book { get; set; }
         public virtual Seller Seller { get; set; }
         public virtual Buyer Buyer { get; set; }
     }
